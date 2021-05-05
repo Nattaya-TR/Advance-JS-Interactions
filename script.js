@@ -1,3 +1,10 @@
+//dark mode & light mode
+
+function switchMode() {
+    let element = document.body;
+    element.classList.toggle("darkMode");
+}
+
 //carousel
 
 let slideIndex = 0;
@@ -15,9 +22,39 @@ function showSlides() {
         slideIndex = 1
     }
     slides[slideIndex-1].style.display = 'block';
-    setTimeout(showSlides, 3000);
+    setTimeout(showSlides, 2000);
 }
 
+//collage & modal
+//get the modal
+let modal = document.getElementById("modal");
+
+//get the image and insert it inside the modal, use alt text for the caption
+let img = document.getElementsByClassName('colImg');
+let modalImg = document.getElementById('modalImg');
+let captionText = document.getElementById("caption");
+
+let showModal = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+for(let i =0; i < img.length; i++) {
+    img[i].addEventListener('click', showModal);
+}
+//get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+//when the user click on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+//pokemon mouseover
+function show() {
+    document.getElementsByClassName("pokeImg").style.visibility = "visible";
+}
 
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
    el.innerText = randomLetter();

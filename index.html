@@ -7,7 +7,7 @@
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body class="lightMode">
+<body class="lightMode" id="body">
 <section class="main container">
     <div class="row intro">
         <div class="col-12 bigTitle">JS Interactivity</div>
@@ -15,67 +15,106 @@
     </div>
     <div class="row carousel">
         <div class="slider" data-carousel>
-            <div class="carousel-cell" style="background-image: url(img/carousel-2.JPG);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-3.JPG);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-4.JPG);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-5.jpg);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel.jpg);"></div>
             <div class="carousel-cell" style="background-image: url(img/carousel-1.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel-2.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel-3.jpg);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel-4.jpg);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel-5.jpg);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel-6.JPG);"></div>
         </div>
     </div>
     <div class="row collage">
         <div class="col-12 title">I want a collage here, and if I click the image, it will enlarge and give me a short description!</div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg" src="img/col-1.JPG" alt="Message" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modalImg">
+                    <div id="caption"></div>
+                </div>
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-2.JPG" alt="Phone" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-3.JPG" alt="Netflix" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-4.JPG" alt="Music" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-5.JPG" alt="YouTube" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-6.JPG" alt="Instagram" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-7.JPG" alt="Sportify" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-8.JPG" alt="Snapchat" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-9.JPG" alt="Email" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-10.JPG" alt="Photos" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-11.JPG" alt="Twitter" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-12.JPG" alt="Calendar" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-13.JPG" alt="Facebook" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-14.JPG" alt="Pinterest" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-15.JPG" alt="Discord" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
         <div class="col-3 picture">
-            <div class="image"></div>
+            <div class="image">
+                <img class="colImg"  src="img/col-16.JPG" alt="Google" style=" width:310px; max-width:510px; height:250px; max-height: 500px">
+            </div>
         </div>
     </div>
     <div class="row popupText">
         <div class="col-12 title">When I hover a Pokemon's name, I want to get a small popup image above it to see what it looks like!</div>
-        <div class="col-12 text">It is stated in multiple Pokédex entries that some Pokémon are known to eat others, such as <span class="poke">Pidgeot</span> swooping down to catch a <span class="poke">Magikarp</span> meal from the water. Humans have also been implied to eat Pokémon, with the player's Mom's Cinnabar Volcano Burgers and Team Rocket's plot to sell <span class="poke">Slowpoke</span> Tails as a sweet treat. <span class="poke">Farfetch'd</span> itself is based on a specific manner for preparing a meal of duck, with its rarity in the wild being a result of overhunting.</div>
+        <div class="col-12 text">It is stated in multiple Pokédex entries that some Pokémon are known to eat others, such as <img src="img/pidgeot.png" style="visibility: hidden" onmouseover="show()"> <span class="poke">Pidgeot</span> swooping down to catch a <span class="poke">Magikarp</span> meal from the water. Humans have also been implied to eat Pokémon, with the player's Mom's Cinnabar Volcano Burgers and Team Rocket's plot to sell <span class="poke">Slowpoke</span> Tails as a sweet treat. <span class="poke">Farfetch'd</span> itself is based on a specific manner for preparing a meal of duck, with its rarity in the wild being a result of overhunting.</div>
     </div>
     <div class="row game">
         <div class="col-12 title">See this red circle in the box? I want you to make this a chasing circle, it will run after your cursor as long as it is in the box!</div>
@@ -343,7 +382,7 @@
         </div>
     </div>
 </section>
-<div class="mode">💡</div>
+<div class="mode"><a onclick="switchMode()">💡</a></div>
 <script src="script.js"></script>
 </body>
 </html>
