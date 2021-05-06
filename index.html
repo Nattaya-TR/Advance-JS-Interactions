@@ -15,13 +15,14 @@
     </div>
     <div class="row carousel">
         <div class="slider" data-carousel>
-            <div class="carousel-cell" style="background-image: url(img/carousel.jpg);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-1.JPG);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-2.JPG);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-3.jpg);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-4.jpg);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-5.jpg);"></div>
-            <div class="carousel-cell" style="background-image: url(img/carousel-6.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel1.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel2.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel3.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel4.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel6.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel7.jpg);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel5.JPG);"></div>
+            <div class="carousel-cell" style="background-image: url(img/carousel8.JPG);"></div>
         </div>
     </div>
     <div class="row collage">
@@ -114,12 +115,20 @@
     </div>
     <div class="row popupText">
         <div class="col-12 title">When I hover a Pokemon's name, I want to get a small popup image above it to see what it looks like!</div>
-        <div class="col-12 text">It is stated in multiple Pokédex entries that some Pokémon are known to eat others, such as <img src="img/pidgeot.png" style="visibility: hidden" onmouseover="show()"> <span class="poke">Pidgeot</span> swooping down to catch a <span class="poke">Magikarp</span> meal from the water. Humans have also been implied to eat Pokémon, with the player's Mom's Cinnabar Volcano Burgers and Team Rocket's plot to sell <span class="poke">Slowpoke</span> Tails as a sweet treat. <span class="poke">Farfetch'd</span> itself is based on a specific manner for preparing a meal of duck, with its rarity in the wild being a result of overhunting.</div>
+        <div class="col-12 text">It is stated in multiple Pokédex entries that some Pokémon are known to eat others, such as
+            <span class="poke" onmouseover="show('Pidgeot')" onmouseout="hide('Pidgeot')"> Pidgeot </span> <img src="img/pidgeot.png" id="Pidgeot" alt="pokemon" style="display:none; border:0">
+            swooping down to catch a
+            <span class="poke" onmouseover="show('Magikarp')" onmouseout="hide('Magikarp')">Magikarp</span> <img src="img/magikarp.jpg" id="Magikarp" alt="pokemon" style="display:none; border:0"> meal from the water.
+            Humans have also been implied to eat Pokémon, with the player's Mom's Cinnabar Volcano Burgers and Team Rocket's plot to sell
+            <span class="poke" onmouseover="show('Slowpoke')" onmouseout="hide('Slowpoke')"> Slowpoke </span> <img src="img/slowpoke.png" id="Slowpoke"
+            alt="pokemon" style="display:none; border:0"> Tails as a sweet treat.
+            <span class="poke" onmouseover="show('FarFetchD')" onmouseout="hide('FarFetchD')">Farfetch'd</span> <img src="img/farfetchd.jpg" id="FarFetchD" alt="pokemon" style="display:none; border:0">
+            itself is based on a specific manner for preparing a meal of duck, with its rarity in the wild being a result of overhunting.</div>
     </div>
     <div class="row game">
         <div class="col-12 title">See this red circle in the box? I want you to make this a chasing circle, it will run after your cursor as long as it is in the box!</div>
-        <div class="col-12 box">
-            <div class="chaser"></div>
+        <div class="col-12 box" id="chaserBox">
+            <div class="chaser" id="chaser"></div>
         </div>
         <div class="col-12 title">See this green circle in the box? I want you to make this a running circle, it will run away from your cursor as long as it is in the box!</div>
         <div class="col-12 box">

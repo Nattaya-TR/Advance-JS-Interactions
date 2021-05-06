@@ -52,10 +52,21 @@ span.onclick = function() {
 }
 
 //pokemon mouseover
-function show() {
-    document.getElementsByClassName("pokeImg").style.visibility = "visible";
+
+function show(id) {
+    document.getElementById(id).style.display = "inline";
 }
 
+function hide(id) {
+    document.getElementById(id).style.display = "none" ;
+}
+
+// chasing circle
+document.addEventListener('mousemove', function (e) {
+    let box = document.getElementById('chaserBox');
+    let circle = document.getElementById('chaser');
+});
+//letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
    el.innerText = randomLetter();
 });
