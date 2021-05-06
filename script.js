@@ -62,10 +62,23 @@ function hide(id) {
 }
 
 // chasing circle
-document.addEventListener('mousemove', function (e) {
-    let box = document.getElementById('chaserBox');
-    let circle = document.getElementById('chaser');
+let circle = document.getElementById('chaser');
+let box = document.getElementById("chaserBox")
+
+const onMouseMove = (e) => {
+    circle.style.left = e.pageX + 'px';
+    circle.style.top = e.pageY + 'px';
+}
+
+box.addEventListener('mousemove', onMouseMove);
+
+box.addEventListener('mouseout', function() {
+    circle.style.top = "2605px";
+    circle.style.left = "125px";
 });
+
+
+
 //letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
    el.innerText = randomLetter();
