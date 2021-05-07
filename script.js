@@ -73,11 +73,36 @@ const onMouseMove = (e) => {
 box.addEventListener('mousemove', onMouseMove);
 
 box.addEventListener('mouseout', function() {
-    circle.style.top = "2605px";
+    circle.style.top = "2725px";
     circle.style.left = "125px";
 });
 
+//run away from cursor
+let runner = document.getElementById("runner");
+let runnerBox = document.getElementById("runnerBox");
 
+function run() {
+    let runner = document.getElementById("runner");
+    if (!runner.style.left) {
+        runner.style.left = "500px";
+    } else {
+        let posLeft = parseInt(runner.style.left);
+        if (posLeft >= 800) {
+            runner.style.left = "250px";
+        } else if (posLeft > 450) {
+            posLeft += 150;
+            runner.style.left = (posLeft + 150 ) + "px";
+
+        }
+    }
+}
+
+runnerBox.addEventListener('mousemove', run);
+
+runnerBox.addEventListener("mouseout", function () {
+    runner.style.top = "3500px";
+    runner.style.left = "125px";
+})
 
 //letters
 Array.from(document.querySelectorAll(".letter")).forEach(el => {

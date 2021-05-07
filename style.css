@@ -4,23 +4,23 @@ body{
     font-family: 'Itim', cursive;
 }
 
+
 /* for carousel*/
 
 .slide {
     width : 100%;
     height: 100vh;
     overflow: hidden;
-    z-index : -1;
 }
 
 .carousel-cell {
-    margin-top: 50px;
+    margin-top: 20px;
     width : 100vw;
     height: 100vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 }
 
 /* collage and modal */
@@ -40,7 +40,7 @@ body{
 }
 
 .colImg:hover {
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .modal {
@@ -49,7 +49,8 @@ body{
     z-index: 1;
     padding-top : 25px;
     left: 400px;
-    width : 550px;
+    top : 0;
+    width : 750px;
     height: 450px;
     background-color: rgba(251, 246, 255, 0.9);
 }
@@ -102,7 +103,7 @@ body{
     cursor : pointer;
 }
 
-/* pokemon show image mouseover */
+/* Thai food image mouseover */
 .poke{
     font-weight: bold;
 }
@@ -111,11 +112,14 @@ body{
     cursor: pointer;
 }
 
+#food {
+    font-size: 18px;
+}
 .popupText img {
     position : absolute;
-    margin-top : 0;
-    height: 150px;
-    width: 175px;
+    margin-top : 5px;
+    height: 160px;
+    width: 185px;
     border-radius: 5px;
 }
 
@@ -125,6 +129,7 @@ body{
     width : 1350px;
     left: 250px;
 }
+
 #chaserBox .chaser{
     width: 50px;
     height: 50px;
@@ -132,24 +137,33 @@ body{
     border-radius: 50%;
     /*add more css*/
     position : absolute;
+    margin : 10px 20px 0 0;
 }
 
 /* run away */
+#runnerBox {
+    height : 550px;
+    width : 1350px;
+    left: 250px;
+}
+
 .runner{
     width: 50px;
     height: 50px;
     background: green;
     border-radius: 50%;
+    position : absolute;
+    margin: 10px 20px 0 0;
 }
 
-.box{
+.box {
     border: 1px solid grey;
     height: 350px;
 }
 
 .carouselContainer{
     background: royalblue;
-    height: 400px;
+    height: 500px;
 }
 
 .title{
@@ -159,7 +173,7 @@ body{
 }
 
 .lightMode{
-    background: rgb(245, 245, 245);
+    background-image: linear-gradient(to left, rgba(166, 146, 236, 0.79), rgba(138, 229, 232, 0.78));
     color: rgb(10, 10, 10);
 }
 
