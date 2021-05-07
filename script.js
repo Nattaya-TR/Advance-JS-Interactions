@@ -81,20 +81,37 @@ box.addEventListener('mouseout', function() {
 let runner = document.getElementById("runner");
 let runnerBox = document.getElementById("runnerBox");
 
-function run() {
-    let runner = document.getElementById("runner");
-    if (!runner.style.left) {
-        runner.style.left = "500px";
-    } else {
-        let posLeft = parseInt(runner.style.left);
-        if (posLeft >= 800) {
-            runner.style.left = "250px";
-        } else if (posLeft > 450) {
-            posLeft += 150;
-            runner.style.left = (posLeft + 150 ) + "px";
+function run(e) {
+    let parentPosition = getPosition(e.currentTarget);
+    let xPosition = e.clientX + parentPosition.x + (runner.clientWidth  /2);
+    let yPosition = e.clientY + parentPosition.y + (runner.clientHeight /2);
+    runner.style.left = xPosition + "px";
+    runner.style.top = yPosition + "px";
+}
 
+function getPosition(el) {
+    let xPos = 0;
+    let yPos = 0;
+    while (el) {
+        if (el.tagName === "body") {
+            // deal with browser quirks with body/window/document and page scroll
+            let xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+            let yScroll = el.scrollTop || document.documentElement.scrollTop;
+
+            xPos += (el.offsetLeft - xScroll + el.clientLeft);
+            yPos += (el.offsetTop - yScroll + el.clientTop);
+        } else {
+            // for all other non-BODY elements
+            xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+            yPos += (el.offsetTop - el.scrollTop + el.clientTop);
         }
+
+        el = el.offsetParent;
     }
+    return {
+        x: xPos,
+        y: yPos
+    };
 }
 
 runnerBox.addEventListener('mousemove', run);
