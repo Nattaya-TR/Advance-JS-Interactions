@@ -171,24 +171,22 @@ function getOption(user) {
                 console.log(userSelected);
 
                 if(userSelected === "y" && letter.innerHTML === "y") {
-                    letter.style.color = "yellow";
-                    letter.style.fontSize = '24px';
-                }
-                if(userSelected === "b" && letter.innerHTML === "b") {
-                    letter.style.color = "blue";
                     letter.style.fontSize = '36px';
                 }
+                if(userSelected === "b" && letter.innerHTML === "b") {
+                    letter.style.fontSize = '50px';
+                }
                 if(userSelected === "p" && letter.innerHTML === "p") {
-                    letter.style.color = "pink";
                     letter.style.fontSize = '40px';
                 }
                 if(userSelected === "g" && letter.innerHTML === "g") {
-                    letter.style.color = "green";
-                    letter.style.fontSize = '30px';
+                    letter.style.fontSize = '55px';
                 }
                 if(userSelected === "r" && letter.innerHTML === "r") {
-                    letter.style.color = "red";
                     letter.style.fontSize = '48px';
+                } else {
+                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    letter.style.color = "#" +  randomColor;
                 }
             }
 

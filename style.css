@@ -214,12 +214,23 @@ body{
 /* letter */
 #text-content {
     font-size: 20px;
+    height: 450px;
 }
 
 form {
     padding: 10px;
 }
 
-button:hover {
-    transition: 3s;
+input {
+    border: 3px solid palevioletred;
+    border-radius: 5px;
+    background: plum;
+    outline :none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+input:hover {
+    transform: scale(1.2) ;
 }
