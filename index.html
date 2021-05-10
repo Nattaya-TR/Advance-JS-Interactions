@@ -174,7 +174,18 @@
             said key. You could make all letters move / rotate when you move the mouse, based on which letter it is! Go
             crazy!
         </div>
-        <div class="col-12 box">
+        <div class="col-12 box" id="text-content">
+            <form action="index.html">
+                <label for="user">Choose the alphabet :</label>
+                <select name="alphabets" id="user">
+                    <option value="y">Y</option>
+                    <option value="b">B</option>
+                    <option value="p">P</option>
+                    <option value="g">G</option>
+                    <option value="r">R</option>
+                </select>
+                <input class="btn" type="button" value="submit" onclick="getOption(user);">
+            </form>
             <span class="letter"></span>
             <span class="letter"></span>
             <span class="letter"></span>

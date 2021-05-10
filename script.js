@@ -1,3 +1,4 @@
+
 //dark mode & light mode
 
 function switchMode() {
@@ -152,20 +153,55 @@ function randomLetter(){
     return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
 
-let textWrapper = document.querySelector(".letter");
-textWrapper.innerHTML = textWrapper.textContent.replace("<span class='letterDown'></span>");
+let letters = document.getElementsByClassName('letter');
+let user = document.getElementById('user');
 
-anime.timeline({loop : true})
-.add({
-    target: '.letter .letterDown',
-    translateY: [-100, 0],
-    easing : "easeOutExpo",
-    duration : 1400,
-    delay : (el, i) => 30 * i
-}).add ({
-    target: ".letter",
-    opacity : 0,
-    duration : 1000,
-    easing : 'easeOutExpo',
-    delay: 1000
-});
+
+
+//get value from User selection
+function getOption(user) {
+    for(let letter of letters) {
+        console.log(letter);
+
+        let option;
+        for (let i = 0, length = user.options.length; i < length; i++) {
+            option = user.options[i];
+            if (option.selected === true) {
+                let userSelected = option.value;
+                console.log(userSelected);
+
+                if(userSelected === "y" && letter.innerHTML === "y") {
+                    letter.style.color = "yellow";
+                    letter.style.fontSize = '24px';
+                }
+                if(userSelected === "b" && letter.innerHTML === "b") {
+                    letter.style.color = "blue";
+                    letter.style.fontSize = '36px';
+                }
+                if(userSelected === "p" && letter.innerHTML === "p") {
+                    letter.style.color = "pink";
+                    letter.style.fontSize = '40px';
+                }
+                if(userSelected === "g" && letter.innerHTML === "g") {
+                    letter.style.color = "green";
+                    letter.style.fontSize = '30px';
+                }
+                if(userSelected === "r" && letter.innerHTML === "r") {
+                    letter.style.color = "red";
+                    letter.style.fontSize = '48px';
+                }
+            }
+
+        }
+
+//loop over all the letter
+
+        /*if(letter.innerHTML === "y") {
+            letter.style.color = "yellow";
+        } if(letter.innerHTML === "b") {
+            letter.style.color = "blue"
+        }*/
+    }
+}
+
+

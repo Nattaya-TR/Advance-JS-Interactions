@@ -210,3 +210,16 @@ body{
 .mode:hover{
     cursor: pointer;
 }
+
+/* letter */
+#text-content {
+    font-size: 20px;
+}
+
+form {
+    padding: 10px;
+}
+
+button:hover {
+    transition: 3s;
+}
