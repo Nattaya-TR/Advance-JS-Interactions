@@ -51,7 +51,7 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 
-//pokemon mouseover
+// mouseover
 
 function show(id) {
     document.getElementById(id).style.display = "inline";
@@ -85,25 +85,46 @@ function run(e) {
     let parentPosition = getPosition(e.currentTarget);
     let xPosition = e.clientX + parentPosition.x + (runner.clientWidth  /2);
     let yPosition = e.clientY + parentPosition.y + (runner.clientHeight /2);
-    runner.style.left = xPosition + "px";
-    runner.style.top = yPosition + "px";
+
+    console.log('Y:' + yPosition + ',' + 'X:' + xPosition);
+
+    if((yPosition) > 350){
+        yPosition = 230;//yPosition - (350+20);
+    }
+
+    if((yPosition) < 10){
+        yPosition = 230;//yPosition + (10+20);
+    }
+
+    if((xPosition) > 550){
+        xPosition = 175;//xPosition - (550+20);
+    }
+    if((xPosition) < 30){
+        xPosition = 175;//xPosition + (30+20);
+    }
+
+    runner.style.left = e.pageX + (runner.clientWidth /2) + "px";
+    runner.style.top = e.pageY + (runner.clientTop /2) + "px";
 }
 
+// Helper function to get an element's exact position
 function getPosition(el) {
     let xPos = 0;
     let yPos = 0;
+
     while (el) {
-        if (el.tagName === "body") {
+        if (el.tagName === "div") {
+
             // deal with browser quirks with body/window/document and page scroll
             let xScroll = el.scrollLeft || document.documentElement.scrollLeft;
             let yScroll = el.scrollTop || document.documentElement.scrollTop;
 
-            xPos += (el.offsetLeft - xScroll + el.clientLeft);
-            yPos += (el.offsetTop - yScroll + el.clientTop);
+            xPos += (el.offsetLeft + xScroll + el.clientLeft);
+            yPos += (el.offsetTop + yScroll + el.clientTop);
         } else {
-            // for all other non-BODY elements
-            xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-            yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+            // for all other non-div elements
+            xPos += (el.offsetLeft + el.scrollLeft + el.clientLeft);
+            yPos += (el.offsetTop + el.scrollTop + el.clientTop);
         }
 
         el = el.offsetParent;
@@ -114,7 +135,7 @@ function getPosition(el) {
     };
 }
 
-runnerBox.addEventListener('mousemove', run);
+runnerBox.addEventListener('mousemove', run, false);
 
 runnerBox.addEventListener("mouseout", function () {
     runner.style.top = "3500px";
@@ -130,3 +151,21 @@ function randomLetter(){
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
     return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
+
+let textWrapper = document.querySelector(".letter");
+textWrapper.innerHTML = textWrapper.textContent.replace("<span class='letterDown'></span>");
+
+anime.timeline({loop : true})
+.add({
+    target: '.letter .letterDown',
+    translateY: [-100, 0],
+    easing : "easeOutExpo",
+    duration : 1400,
+    delay : (el, i) => 30 * i
+}).add ({
+    target: ".letter",
+    opacity : 0,
+    duration : 1000,
+    easing : 'easeOutExpo',
+    delay: 1000
+});
